@@ -71,13 +71,12 @@ input:hover, input:focus, select:hover, select:focus, button:hover, button:focus
 
 .btn{
     color: #747474;
-    padding: 10px 20px;
+    padding: 12px 25px;
     text-transform: uppercase;
     cursor: pointer;
     display: inline-block;
     margin: 10px 5px 10px 0;
     font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: small;
 }
 .btn-bordered{
     background: transparent;
@@ -134,13 +133,6 @@ input:hover, input:focus, select:hover, select:focus, button:hover, button:focus
 .btn-dark:hover{
     background-color: #333;
     border-color: #333;
-}
-
-@media (min-width: 576px){
-    .btn{
-        padding: 12px 25px;
-        font-size: medium;
-    }
 }
 /* End of buttons */
 
@@ -933,7 +925,7 @@ ul.tabs.extrapadding{
     transition: all 600ms ease;
 }
 .stars .filled{
-    color: #ffff00;
+    color: yellow;
 }
 @media (min-width: 768px){
     .section-product-view{
