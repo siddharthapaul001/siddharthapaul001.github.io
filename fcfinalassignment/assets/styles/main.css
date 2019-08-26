@@ -624,7 +624,7 @@ ul.tabs.extrapadding{
 
 @media (min-width: 768px){
     .section-products{
-        padding: 20px 5%;
+        padding: 40px 5%;
     }
     .products{
         flex-direction: row;
@@ -773,7 +773,7 @@ ul.tabs.extrapadding{
 
 /* Section map */
 .section-map{
-    color: #777;
+    color: #8a8889;
 }
 .map-img{
     width: 100%;
@@ -800,8 +800,13 @@ ul.tabs.extrapadding{
     font-weight: 400;
     color: #8a8889;
 }
+.contact-info li a:hover{
+    color: #333;
+    transition: all 600ms ease;
+}
 .contact-info li.share{
     text-align: center;
+    padding-top: 15px;
 }
 .contact-info li.share a{
     text-align: left;
@@ -1091,6 +1096,10 @@ footer div{
 .bottom-margin{
     margin-bottom: 20px;
 }
+.limit-flow{
+    max-width: 1440px;
+    margin: 0 auto;
+}
 
 @media (min-width: 768px){
     .side-padding{
@@ -1108,6 +1117,7 @@ footer div{
         padding-bottom: 20px;
     }
 }
+
 @media (min-width: 1280px){
     .side-padding{
         padding-left: 10%;
