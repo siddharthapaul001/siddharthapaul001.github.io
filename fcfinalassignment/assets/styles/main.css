@@ -70,23 +70,24 @@ input:hover, input:focus, select:hover, select:focus, button:hover, button:focus
 /* Buttons */
 
 .btn{
-    color: #747474;
+    color: #454545;
     padding: 12px 25px;
     text-transform: uppercase;
     cursor: pointer;
     display: inline-block;
     margin: 10px 5px 10px 0;
     font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.3ch;
 }
 .btn-bordered{
     background: transparent;
-    border: 2px solid #747474;
+    border: 2px solid #737373;
 }
 .btn-transparent{
     background: transparent;
     border: 2px solid transparent;
     color: #747474;
-    font-size: medium;
+    font-size: small;
     padding-left: 0;
 }
 .btn-transparent span{
@@ -217,6 +218,7 @@ li.cart{
 }
 .primary-menu-container a > span{
     display: block;
+    color: #a4a4a4;
 }
 .submenu{
     display: none;
@@ -274,10 +276,11 @@ li.cart{
 
 .searchbox{
     padding: 3px;
-    border: 1px solid #333;
+    border: 1px solid #e7e7e7;
     font-size: small;
     background-color: #fff;
     margin: 5px 10px 10px 10px;
+    color: #959595;
 }
 
 .search-wraper{
@@ -474,7 +477,8 @@ ul.tabs-dark li{
     background-color: #f8f8f8;
 }
 ul.tabs.extrapadding{
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .tabs li{
     display: inline-block;
@@ -489,7 +493,7 @@ ul.tabs.extrapadding{
     font-weight: 700;
 }
 .tabs-dark a{
-    padding:  15px 20px;
+    padding:  15px 30px;
 }
 .tabs li.active a, .tabs li a:hover{
     color: #00c8c8;
@@ -772,6 +776,7 @@ ul.tabs.extrapadding{
 .contact-details{
     padding: 0 25px;
     box-sizing: border-box;
+    font-size: small;
 }
 
 .contact-info li{
@@ -786,9 +791,8 @@ ul.tabs.extrapadding{
 .contact-info li a, .contact-info li address, .contact-info li div{
     display: block;
     padding-left: 25px;
-    font-size: medium;
     font-weight: 400;
-    color: #777;
+    color: #8a8889;
 }
 .contact-info li.share{
     text-align: center;
@@ -819,7 +823,7 @@ ul.tabs.extrapadding{
         width: 65%;
     }
     .map-img img{
-        max-height: 500px;
+        height: 100%;
     }
     .contact-details{
         width: 35%;
@@ -868,7 +872,7 @@ ul.tabs.extrapadding{
     padding: 5px 0;
 }
 .product-view-info h2, .product-view-info strong{
-    color: #333;
+    color: #565455;
 }
 
 .product-view-info h2{
@@ -889,9 +893,9 @@ ul.tabs.extrapadding{
 }
 .customize-item-form select, .customize-item-form input{
     background-color: transparent;
-    border: 2px solid #777;
-    padding: 7px 10px;
-    font-size: medium;
+    border: 1px solid #e7e7e7;
+    padding: 10px 15px;
+    font-size: small;
     color: #777;
     margin-right: 5px;
     position: relative;
@@ -908,6 +912,8 @@ ul.tabs.extrapadding{
 }
 .product-price{
     font-size: xx-large;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 .product-price > span{
     display: inline-block;
@@ -920,6 +926,7 @@ ul.tabs.extrapadding{
 }
 .reviews{
     padding-bottom: 10px;
+    color: #898989;
 }
 .reviews > div{
     font-weight: 700;
@@ -936,8 +943,11 @@ ul.tabs.extrapadding{
     color: #00c8c8;
     transition: all 600ms ease;
 }
+.stars span{
+    color: #dfdfdf;
+}
 .stars .filled{
-    color: yellow;
+    color: #d9d1aa;
 }
 @media (min-width: 768px){
     .section-product-view{
