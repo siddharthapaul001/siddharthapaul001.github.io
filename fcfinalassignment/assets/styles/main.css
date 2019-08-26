@@ -42,7 +42,7 @@ p{
 form input[type="text"],form input[type="password"],form input[type="email"]{
     width: 100%;
     padding: 10px;
-    border: 1px solid #777;
+    border: 1px solid #e7e7e7;
     display: block;
     margin: 20px 0;
     box-sizing: border-box;
@@ -51,7 +51,7 @@ form input[type="text"],form input[type="password"],form input[type="email"]{
 form input[type="checkbox"]{
     width: 15px;
     height:15px;
-    border: 1px solid #777;
+    border: 1px solid #e7e7e7;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -858,6 +858,7 @@ ul.tabs.extrapadding{
 /* Section forms */
 .section-forms label{
     font-size: small;
+    color: #777;
 }
     .section-forms h2{
         padding: 0 10px;
