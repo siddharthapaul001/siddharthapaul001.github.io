@@ -52,6 +52,16 @@ form input[type="checkbox"]{
     width: 15px;
     height:15px;
     border: 1px solid #777;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    vertical-align: middle;
+}
+
+form input[type="checkbox"]:checked::before{
+    content: '\2713';
+    color: #777;
+    font-weight: 700;
 }
 
 @media (min-width: 576px) {
@@ -846,6 +856,9 @@ ul.tabs.extrapadding{
 /* End of section map */
 
 /* Section forms */
+.section-forms label{
+    font-size: small;
+}
     .section-forms h2{
         padding: 0 10px;
     }
