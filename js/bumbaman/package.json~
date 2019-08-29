@@ -1,0 +1,17 @@
+{
+  "name": "bumbaman",
+  "version": "1.0.0",
+  "description": "Abstract parse tree practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bumbada",
+    "prasenjit",
+    "chakraborty",
+    "bumba"
+  ],
+  "author": "Siddhartha Paul",
+  "license": "ISC"
+}

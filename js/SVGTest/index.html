@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG Test</title>
+        <style>
+            html, body{
+                padding: 0;
+                margin: 0;
+            }
+        </style>
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <div id="svg-container" class="svg-container">
+            
+        </div>
+        <div class="btn-container">
+            <button class="btn" id="scale">+</button>
+            <button class="btn" id="scale-out">-</button>
+            <button class="btn" id="push-right">-&gt;</button>
+            <button class="btn" id="push-left">&lt;-</button>
+
+            <button class="btn" id="push-top">^</button>
+            <button class="btn" id="push-down">Down</button>
+            <input type="color" class="inp-color" id="inp-color" />
+        </div>
+        <div class="btn-container">
+            <button class="btn" id="rect" onclick="createRect()">Create Rectangle</button>
+            <button class="btn" id="circle" onclick="createCircle()">Create Circle</button>
+            <button class="btn" id="ellipse" onclick="createEllipse()">Create Ellipse</button>
+        </div>
+        <script>
+            
+            var currentElem, currentShape;
+
+            function createRect(){
+                currentShape = new Rect();
+                currentElem = createSVG(currentShape);
+            }
+
+            function createCircle(){
+                currentShape = new Circle();
+                currentElem = createSVG(currentShape);
+            }
+            
+            function createEllipse(){
+                currentShape = new Ellipse();
+                currentElem = createSVG(currentShape);
+            }
+
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            document.getElementById("svg-container").appendChild(svg);
+
+            function createSVG(shape){
+                let elem = document.createElementNS("http://www.w3.org/2000/svg", shape.toString());
+                svg.appendChild(elem);
+                return updateSVG(shape, elem);
+            }
+
+            function updateSVG(shape, htmlElement){
+                let props = shape.getElem();
+                for(let a in props){
+                    htmlElement.setAttribute(a, props[a]);
+                }
+                htmlElement.setAttribute("style", shape.getStyleString());
+                return htmlElement;
+            }
+
+            document.getElementById("scale").addEventListener("click", function(event){
+                currentShape.scale();
+                updateSVG(currentShape, currentElem);
+            });
+
+            document.getElementById("scale-out").addEventListener("click", function(event){
+                currentShape.scaleOut();
+                updateSVG(currentShape, currentElem);
+            });
+
+            document.getElementById("inp-color").addEventListener("change", function(){
+                currentShape.setFillColor(document.getElementById("inp-color").value) 
+                currentShape.setStrokeColor(document.getElementById("inp-color").value);
+                updateSVG(currentShape, currentElem);
+            });
+
+            document.getElementById("inp-color").addEventListener("change", function(){
+                currentShape.setFillColor(document.getElementById("inp-color").value) 
+                currentShape.setStrokeColor(document.getElementById("inp-color").value);
+                updateSVG(currentShape, currentElem);
+            });
+
+            document.getElementById("push-right").addEventListener("click", function(){
+                currentShape.pushRight()
+                updateSVG(currentShape, currentElem);
+            });
+
+            document.getElementById("push-left").addEventListener("click", function(){
+                currentShape.pushLeft()
+                updateSVG(currentShape, currentElem);
+            });
+
+            document.getElementById("push-top").addEventListener("click", function(){
+                currentShape.pushTop();
+                updateSVG(currentShape, currentElem);
+            });
+
+            document.getElementById("push-down").addEventListener("click", function(){
+                currentShape.pushDown();
+                updateSVG(currentShape, currentElem);
+            });
+
+            window.onload = function(){
+                svg.setAttribute('width', window.innerWidth);
+                svg.setAttribute('height', window.innerHeight - 200);
+                console.log(window.innerHeight);
+            }
+        </script>
+    </body>
+</html>
