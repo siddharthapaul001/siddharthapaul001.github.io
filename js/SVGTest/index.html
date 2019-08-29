@@ -2,10 +2,15 @@
 <html>
     <head>
         <title>SVG Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             html, body{
                 padding: 0;
                 margin: 0;
+            }
+            .btn-container{
+                display: flex;
+                height: 90px;
             }
         </style>
         <script src="js/index.js"></script>
@@ -15,13 +20,13 @@
             
         </div>
         <div class="btn-container">
-            <button class="btn" id="scale">+</button>
-            <button class="btn" id="scale-out">-</button>
-            <button class="btn" id="push-right">-&gt;</button>
-            <button class="btn" id="push-left">&lt;-</button>
+            <button class="btn" id="scale">Scale In</button>
+            <button class="btn" id="scale-out">Scale out</button>
+            <button class="btn" id="push-right">Move right</button>
+            <button class="btn" id="push-left">Move left</button>
 
-            <button class="btn" id="push-top">^</button>
-            <button class="btn" id="push-down">Down</button>
+            <button class="btn" id="push-top">Move up</button>
+            <button class="btn" id="push-down">Move down</button>
             <input type="color" class="inp-color" id="inp-color" />
         </div>
         <div class="btn-container">
