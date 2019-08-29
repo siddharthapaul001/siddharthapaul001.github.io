@@ -6,10 +6,10 @@
     <body>
         <div id="abc">ABC</div>
         <div id="xyz">XYZ</div>
-        <button id="btn-red" onclick="makeRed()">Make ABC Red</button>
-        <button id="btn-red-reset" onclick="resetRed()">Reset ABC</button>
-        <button id="btn-green" onclick="makeGreen()">Make XYZ Green</button>
-        <button id="btn-green-reset" onclick="resetGreen()">Reset XYZ</button>
+        <button id="btn-red" onclick="makeColor('#abc', '#f00')">Make ABC Red</button>
+        <button id="btn-red-reset" onclick="resetColor('#abc')">Reset ABC</button>
+        <button id="btn-green" onclick="makeColor('#xyz', '#0f0')">Make XYZ Green</button>
+        <button id="btn-green-reset" onclick="resetColor('#xyz')">Reset XYZ</button>
         <script>
 
             function findRule(styleSheet, selector){
@@ -24,37 +24,23 @@
             function createStyle(){
                 let styleElem = document.createElement("style");
                 document.getElementsByTagName("head")[0].appendChild(styleElem);
-                return document.styleSheets[0];
+                return styleElem.sheet;
             }
             function getStyle(){
                 return document.styleSheets.length ? document.styleSheets[0] : createStyle();
             }
 
-            function makeRed(){
+            function makeColor(selector, color){
                 let styleSheet = getStyle();
-                if(findRule(styleSheet, "#abc") == -1){
-                    styleSheet.insertRule("#abc{background-color: #f00}", styleSheet.rules.length);
-                }
-            }
-            
-            function resetRed(){
-                let styleSheet = getStyle();
-                if(findRule(styleSheet, "#abc") > -1){
-                    styleSheet.deleteRule(findRule(styleSheet, "#abc"));
+                if(findRule(styleSheet, selector) == -1){
+                    styleSheet.insertRule(selector+"{background-color: "+color+";}", styleSheet.rules.length);
                 }
             }
 
-
-            function makeGreen(){
-                let styleSheet = getStyle();
-                if(findRule(styleSheet, "#xyz") == -1){
-                    styleSheet.insertRule("#xyz{background-color: #0f0}", styleSheet.rules.length);
-                }
-            }
-            function resetGreen(){
-                let styleSheet = getStyle();
-                if(findRule(styleSheet, "#xyz") > -1){
-                    styleSheet.deleteRule(findRule(styleSheet, "#xyz"));
+            function resetColor(selector){
+                let styleSheet = getStyle(), ruleIndex = findRule(styleSheet, selector);
+                if(ruleIndex > -1){
+                    styleSheet.deleteRule(ruleIndex);
                 }
             }
         </script>
