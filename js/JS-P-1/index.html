@@ -39,7 +39,9 @@
             
             function resetRed(){
                 let styleSheet = getStyle();
-                styleSheet.deleteRule(findRule(styleSheet, "#abc"));
+                if(findRule(styleSheet, "#abc") > -1){
+                    styleSheet.deleteRule(findRule(styleSheet, "#abc"));
+                }
             }
 
 
@@ -51,7 +53,9 @@
             }
             function resetGreen(){
                 let styleSheet = getStyle();
-                styleSheet.deleteRule(findRule(styleSheet, "#xyz"));
+                if(findRule(styleSheet, "#xyz") > -1){
+                    styleSheet.deleteRule(findRule(styleSheet, "#xyz"));
+                }
             }
         </script>
     </body>
