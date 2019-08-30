@@ -10,7 +10,13 @@
             }
             .btn-container{
                 display: flex;
-                height: 90px;
+                height: 60px;
+                justify-content: center;
+            }
+            #downloadZone{
+                position: fixed;
+                left:0;
+                right: 0;
             }
         </style>
         <script src="js/index.js"></script>
@@ -21,18 +27,21 @@
         </div>
         <div class="btn-container">
             <button class="btn" id="scale">Scale In</button>
-            <button class="btn" id="scale-out">Scale out</button>
-            <button class="btn" id="push-right">Move right</button>
             <button class="btn" id="push-left">Move left</button>
-
             <button class="btn" id="push-top">Move up</button>
-            <button class="btn" id="push-down">Move down</button>
-            <input type="color" class="inp-color" id="inp-color" />
+            <button class="btn" id="push-right">Move right</button>
+            <button class="btn" id="scale-out">Scale out</button>
+            <button class="btn" id="save" onclick="storagableImage()">Save Image</button>
         </div>
         <div class="btn-container">
             <button class="btn" id="rect" onclick="createRect()">Create Rectangle</button>
+            <button class="btn" id="push-down">Move down</button>
             <button class="btn" id="circle" onclick="createCircle()">Create Circle</button>
             <button class="btn" id="ellipse" onclick="createEllipse()">Create Ellipse</button>
+            <button class="btn" id="star" onclick="createStar()">Create Star</button>
+        </div>
+        <div class="btn-container">
+            <input type="color" class="inp-color" id="inp-color" />
         </div>
         <script>
             
@@ -53,8 +62,22 @@
                 currentElem = createSVG(currentShape);
             }
 
+            function createStar(){
+                currentShape = new Star();
+                currentElem = createSVG(currentShape);
+            }
+
             var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
             document.getElementById("svg-container").appendChild(svg);
+
+            function storagableImage(){
+                let img = document.createElement("img"),
+                svgXML = document.getElementById("svg-container").innerHTML;
+                img.setAttribute("src", "data:image/svg+xml;base64,"+btoa(svgXML.trim()));
+                document.getElementById("svg-container").innerHTML = '';
+                document.getElementById("svg-container").appendChild(img);
+            }
 
             function createSVG(shape){
                 let elem = document.createElementNS("http://www.w3.org/2000/svg", shape.toString());
