@@ -13,6 +13,11 @@
                 height: 60px;
                 justify-content: center;
             }
+            .btn{
+                background-color: #136f75;
+                color: #fff;
+                border: 1px solid #136f75;
+            }
             #downloadZone{
                 position: fixed;
                 left:0;
@@ -43,6 +48,9 @@
         <div class="btn-container">
             <input type="color" class="inp-color" id="inp-color" />
         </div>
+        <div class="hidden">
+            <a id="download-link" href="" download></a>
+        </div>
         <script>
             
             var currentElem, currentShape;
@@ -72,11 +80,11 @@
             document.getElementById("svg-container").appendChild(svg);
 
             function storagableImage(){
-                let img = document.createElement("img"),
+                let dnld = document.getElementById('download-link');
                 svgXML = document.getElementById("svg-container").innerHTML;
-                img.setAttribute("src", "data:image/svg+xml;base64,"+btoa(svgXML.trim()));
-                document.getElementById("svg-container").innerHTML = '';
-                document.getElementById("svg-container").appendChild(img);
+                dnld.setAttribute("href", "data:image/svg+xml;base64,"+btoa(svgXML.trim()));
+                dnld.setAttribute("download", "shift-n-draw-" + (new Date()).toISOString());
+                dnld.click();
             }
 
             function createSVG(shape){
